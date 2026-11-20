@@ -9,12 +9,12 @@
 <meta property="og:url" content="https://budayangai.com/faq.html">
 <meta property="og:title" content="不打烊 AI 工作站：曼谷独享 Mac mini">
 <meta property="og:description" content="整机独享，AI 智能体 24 小时不停。M6 每月 219 USDT 起，USDT 结算。">
-<meta property="og:image" content="https://budayangai.com/og.png">
+<meta property="og:image" content="https://budayangai.com/og.png?v=10">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ffe600">
-<meta name="version" content="v9 2026-11-21">
+<meta name="version" content="v10 2026-11-21">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@ button{font:inherit;color:inherit}
 .wrap{max-width:1240px;margin:0 auto}
 .nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1.5px solid var(--rule);padding:0 max(5vw,16px)}
 .navin{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:20px;min-height:60px}
-.brand{flex:none;display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;text-decoration:none;white-space:nowrap}
+.brand{flex:none;display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;text-decoration:none;white-space:nowrap}.brand .tag{margin-left:-3px;font-weight:500;font-size:15px;color:var(--mute)}
 .links{display:flex;gap:22px;margin-left:auto;overflow-x:auto}
 .links a{flex:none;text-decoration:none;font-size:15px;padding:12px 0}
 .links a:hover{text-decoration:underline}
@@ -207,13 +207,23 @@ body{padding-bottom:78px}
 .stack td{display:flex;justify-content:space-between;gap:14px;border:0;padding:3px 0;text-align:right}
 .stack td::before{content:attr(data-l);flex:none;color:var(--mute);text-align:left}
 }
+@media(max-width:767px){
+.navin{flex-wrap:wrap;column-gap:16px;row-gap:0;min-height:0}
+.brand{min-height:52px}
+.pill{margin-left:auto}
+.links{order:3;flex:1 0 100%;margin-left:0;gap:28px}
+.links a{padding:2px 0 12px}
+html{scroll-padding-top:104px}
+}
+@media(max-width:600px){.links{justify-content:space-between;gap:16px}}
+@media(max-width:359px){.links{gap:12px}.links a{font-size:14px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 .faqpage h1{margin-bottom:26px}
 </style>
 </head>
 <body>
 <header class="nav"><div class="navin">
-  <a class="brand" href="index.html" aria-label="不打烊 AI 工作站"><svg width="30" height="20" viewBox="0 0 30 20" aria-hidden="true"><rect x="1" y="4" width="28" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="23.5" cy="10" r="2.2" fill="#ffe600" stroke="currentColor" stroke-width="1"/></svg>不打烊</a>
+  <a class="brand" href="index.html" aria-label="不打烊 AI 工作站"><svg width="30" height="20" viewBox="0 0 30 20" aria-hidden="true"><rect x="1" y="4" width="28" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="23.5" cy="10" r="2.2" fill="#ffe600" stroke="currentColor" stroke-width="1"/></svg>不打烊<span class="tag">AI 工作站</span></a>
   <nav class="links" aria-label="页面导航"><a href="index.html#pick">选配</a><a href="index.html#connect">连接方式</a><a href="index.html#plans">方案</a><a href="index.html#rules">账号与地区</a><a href="faq.html" aria-current="page">常见问题</a></nav>
   <span class="pill"><i class="dot" aria-hidden="true"></i>曼谷节点预约中</span>
 </div></header>
