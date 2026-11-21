@@ -14,7 +14,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ffe600">
-<meta name="version" content="v12 2026-11-21">
+<meta name="version" content="v13 2026-11-21">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -218,11 +218,17 @@ body{padding-bottom:78px}
 .pt-faq{font-weight:500}
 @media(min-width:768px){
 .promo{background:none;padding-block:clamp(28px,4vw,56px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
-.promo-in{display:flex;align-items:center;justify-content:center;gap:clamp(28px,5vw,72px)}
+.promo-in{display:flex;align-items:center;justify-content:space-between;gap:clamp(28px,5vw,72px)}
 .pv{flex:none;height:min(78vh,760px);aspect-ratio:9/16;border-radius:18px;overflow:hidden;box-shadow:0 0 0 1.5px var(--con)}
 .pv video{width:100%;height:100%}
-.pt{display:block;max-width:36ch}
+.pt{display:block;max-width:36ch;order:-1}
 }
+@media(min-width:900px){                                     /* 跟下面选配区用同一套两栏：文字对齐标题左边，视频右边对齐报价卡右边 */
+.promo-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,3vw,44px)}
+.pt{grid-column:1;grid-row:1}
+.pv{grid-column:2;grid-row:1;justify-self:end}
+}
+@media(max-width:767px){.ctl{order:1}.fig{order:2}.res{order:3}}   /* 手机：深色视频下面先接浅色的选项，深色报价卡放到选完之后 */
 @media(max-width:899px){.bar{transition:transform .25s ease}body.promo-on .bar{transform:translateY(110%)}}
 @media(max-width:767px){
 .navin{flex-wrap:wrap;column-gap:16px;row-gap:0;min-height:0}
