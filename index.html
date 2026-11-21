@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="dc" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -13,13 +13,13 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#ffe600">
-<meta name="version" content="v13 2026-11-21">
+<meta name="theme-color" content="#0a0c0f">
+<meta name="version" content="v15 2026-11-21">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap">
 <style>
 :root{color-scheme:light dark;--bg:light-dark(#fff,#161615);--ink:light-dark(#111,#f1f1ec);--mute:light-dark(#595954,#a9a9a2);--plane:light-dark(#efefeb,#232321);--con:light-dark(#d8d8d4,#3b3b38);--rule:light-dark(#111,#d8d8d4);--warn:light-dark(#b3001b,#ff8f8f);--y:#ffe600;--led:#3ddc84;--pi:#f3f3ee;--pm:#a3a8ad;--p0:#1e2125;--p1:#121417}
 :root[data-theme=light]{color-scheme:light}
@@ -242,6 +242,158 @@ html{scroll-padding-top:104px}
 @media(max-width:359px){.links{gap:12px}.links a{font-size:14px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
+<style id="dc">
+/* 机房版（v14 预览）—— 整页是一个机柜：两边是带方孔的立柱，每一段是装在柜里的一台设备面板（四角螺丝）；
+   页头下面那条黄色走线槽就是机房顶上的光纤槽；绿灯 = 在线 / 包含，黄灯 = 你的 / 你选中的。只给有意义的东西亮灯。 */
+:root.dc{color-scheme:dark;--bg:#0a0c0f;--ink:#dbe6ee;--mute:#8594a2;--plane:#11161b;--con:#25303a;--rule:#3a4756;--warn:#ff9a9a;
+  --y:#ffe600;--led:#3ddc84;--amb:#ffb020;--face:#141a20;--face2:#0f1418;--edge:#2b3540;--hole:#05070a;
+  --p0:#151b21;--p1:#0b0f13;--pi:#e6eef4;--pm:#8d9aa7;
+  --screw:radial-gradient(circle,#9aa6b2 0 1.1px,#5a6672 1.5px 2.5px,#0b0e12 3px 3.8px,transparent 4.2px);
+  --screws:var(--screw) left top/10px 10px no-repeat,var(--screw) right top/10px 10px no-repeat,var(--screw) left bottom/10px 10px no-repeat,var(--screw) right bottom/10px 10px no-repeat}
+.dc body{font-family:"Barlow Semi Condensed","Noto Sans SC","Noto Sans CJK SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  background:linear-gradient(180deg,rgba(130,190,240,.07),rgba(130,190,240,0) 520px),var(--bg)}
+.dc h1,.dc h2{font-weight:700;letter-spacing:-.01em}
+.dc h1{font-size:clamp(32px,4.2vw,50px)}
+
+/* 页头：设备顶板 + 光纤槽 */
+.dc .nav{background:rgba(10,12,15,.94);border-bottom:1px solid #1c242c;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.dc .nav::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:6px;pointer-events:none;
+  background:linear-gradient(90deg,rgba(255,255,255,0) calc(100% - 130px),rgba(255,255,255,.95) calc(100% - 64px),rgba(255,255,255,0)) 0 0/900px 100% repeat-x,
+    linear-gradient(90deg,rgba(255,255,255,0) calc(100% - 80px),rgba(255,255,255,.85) calc(100% - 40px),rgba(255,255,255,0)) 0 0/1300px 100% repeat-x,
+    linear-gradient(180deg,rgba(255,255,255,.45),rgba(255,255,255,0) 2px),repeating-linear-gradient(90deg,#ffe600 0 178px,#a89600 178px 180px);
+  box-shadow:0 3px 10px rgba(0,0,0,.55);animation:dcfiber 5.2s linear infinite}
+.dc .pill{border:1px solid var(--edge);background:#0e1317;border-radius:4px}
+.dc .brand svg circle{fill:var(--y)}
+
+/* 机柜立柱：只在宽屏出现，立在内容两边，方孔一 U 三个 */
+@media(min-width:1100px){
+  .dc main{position:relative}
+  .dc main::before,.dc main::after{content:"";position:absolute;top:0;bottom:0;width:26px;pointer-events:none;border-left:1px solid #2a333c;border-right:1px solid #05070a;
+    background:repeating-linear-gradient(180deg,var(--hole) 0 9px,transparent 9px 15px) center 18px/9px 100% no-repeat,linear-gradient(90deg,#11161b,#1d252d 50%,#11161b)}
+  .dc main::before{left:max(8px,calc(50% - 664px))}
+  .dc main::after{right:max(8px,calc(50% - 664px))}
+}
+
+/* 每一段 = 一台装在柜里的设备：钢面板 + 四角螺丝；段与段之间只隔一条缝 */
+.dc .band{padding-block:clamp(9px,1.2vw,16px)}
+.dc .conn,.dc .rules{background:none}
+.dc .band>.wrap{position:relative;background:linear-gradient(180deg,var(--face),var(--face2));border:1px solid var(--edge);border-radius:4px;
+  padding:clamp(22px,3.2vw,44px) clamp(18px,3.4vw,52px);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 16px 40px rgba(0,0,0,.35)}
+.dc .band>.wrap::before{content:"";position:absolute;inset:7px;pointer-events:none;background:var(--screws)}
+
+/* 宣传片：电脑上是一台显示器单元；手机上照旧全宽（不加框，不留黑边） */
+.dc .promo{background:var(--bg)}
+.dc .pv{background:#000}
+@media(min-width:768px){
+  .dc .promo{padding-top:clamp(18px,2vw,28px);padding-bottom:clamp(9px,1.2vw,16px)}
+  .dc .promo-in::before{content:"";position:absolute;inset:7px;pointer-events:none;background:var(--screws)}
+  .dc .promo-in{position:relative;background:linear-gradient(180deg,var(--face),var(--face2));border:1px solid var(--edge);border-radius:4px;
+    padding:clamp(22px,3vw,40px) clamp(18px,3.4vw,52px);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 16px 40px rgba(0,0,0,.35)}
+  .dc .pv{border-radius:6px;box-shadow:0 0 0 1px #2f3a45,0 0 0 7px #07090b,0 0 0 8px #232c35}
+}
+
+/* 选项 = 硬盘仓：深色钢面 + 右上角一颗灯；选中的灯亮黄色 */
+.dc .opt span,.dc .pre button{position:relative;background:linear-gradient(180deg,#171e25,#10161b);border:1px solid #2b3540;border-radius:3px;color:var(--ink);padding-right:30px}
+.dc .opt:hover span,.dc .pre button:hover{background:linear-gradient(180deg,#1b232b,#131a20)}
+.dc .opt span::after,.dc .pre button::after{content:"";position:absolute;top:11px;right:11px;width:7px;height:7px;border-radius:50%;background:#243039;box-shadow:inset 0 0 0 1px #0a0d10}
+.dc .opt input:checked+span{border-color:rgba(255,230,0,.8);box-shadow:inset 0 0 0 1px rgba(255,230,0,.35)}
+.dc .opt input:checked+span::after,.dc .pre button[aria-pressed=true]::after{background:var(--y);box-shadow:0 0 0 1px #6b6100,0 0 10px rgba(255,230,0,.85)}
+.dc .pre button[aria-pressed=true]{background:linear-gradient(180deg,#1e262e,#151c22);color:var(--ink);border-color:rgba(255,230,0,.8)}
+.dc .pre button[aria-pressed=true] small{opacity:1;color:var(--mute)}
+.dc .opt .pr{color:var(--ink)}
+.dc .qty button,.dc .qty input{background:#11171c;border:1px solid var(--edge);border-radius:3px;color:var(--ink)}
+.dc .opt input:focus-visible+span,.dc .pre button:focus-visible,.dc .qty button:focus-visible{outline:2px solid var(--y);outline-offset:3px}
+
+/* 报价：机柜监控屏 + 一张出单 */
+.dc .fig{border-radius:4px;border:1px solid var(--edge);background:linear-gradient(180deg,#151c22,#0a0e12)}
+.dc .res{background:#0d1216;border:1px solid var(--edge);border-radius:4px}
+.dc .lines td{border-bottom-color:#212a33}
+.dc .lines td:last-child,.dc .plans .num,.dc .figtxt b,.dc .bar b{font-family:"Barlow Semi Condensed","Noto Sans SC",sans-serif;font-weight:600}
+.dc .agree input{accent-color:var(--y)}
+.dc .go{border-radius:4px;border:1px solid #000;box-shadow:0 0 0 1px rgba(255,230,0,.25),0 8px 22px rgba(255,230,0,.10)}
+.dc .go:hover{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(255,230,0,.5),0 10px 26px rgba(255,230,0,.18)}
+.dc .go2{background:#11171c;border:1px solid var(--edge);border-radius:4px;color:var(--ink)}
+
+/* 流程：一根蓝色网线，黄色数据包沿线跑；接口是网口 */
+.dc .steps ol::before{background:#24506f}
+.dc .steps li::before{border-radius:3px;background:#0a0d10;border:2px solid #3a4756}
+.dc .steps li:first-child::before{background:var(--y);border-color:#6b6100}
+
+/* 连接方式、方案、规则 */
+.dc .cols3>div{border-top:1px solid var(--edge)}
+.dc .ico .term{fill:#06080a}
+.dc .plans th{border-bottom:1px solid var(--rule)}
+.dc .incl li::before{width:7px;height:7px;border-radius:50%;background:var(--led);box-shadow:0 0 6px rgba(61,220,132,.55)}
+.dc .rules>.wrap{border-top:0}
+.dc .rules>.wrap::after{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:7px;border-radius:4px 4px 0 0;pointer-events:none;
+  background:repeating-linear-gradient(135deg,var(--y) 0 10px,#0a0c0f 10px 20px)}
+
+/* 最后一台：机柜门（冲孔钢板），按钮是黄色电源键 */
+.dc .cta .wrap{border-top:1px solid var(--edge);padding-top:clamp(22px,3.2vw,44px);
+  background:radial-gradient(circle,transparent 0 1.6px,#141a20 2.1px) 0 0/8px 8px,
+    radial-gradient(circle,rgba(61,220,132,.95) 0 2px,rgba(61,220,132,0) 10px) 30px 40px/230px 120px,
+    radial-gradient(circle,rgba(61,220,132,.85) 0 2px,rgba(61,220,132,0) 9px) 150px 90px/170px 140px,
+    radial-gradient(circle,rgba(255,176,32,.8) 0 2px,rgba(255,176,32,0) 9px) 90px 20px/310px 160px,
+    linear-gradient(180deg,#090c10,#05070a);
+  animation:dcdoor 7.2s steps(18,end) infinite}
+.dc .cta a{background:var(--y);color:#111;border:1px solid #000;border-radius:4px;box-shadow:0 0 0 1px rgba(255,230,0,.3),0 8px 22px rgba(255,230,0,.12)}
+
+/* 手机：底部下单条、弹窗 */
+.dc .bar{background:rgba(10,12,15,.97);border-top:1px solid var(--edge)}
+.dc .sheet>div{background:#11161b;border:1px solid var(--edge);border-radius:4px}
+.dc .sheet textarea{background:#0b0f13;border-color:var(--edge)}
+.dc .toast{background:#e6eef4;color:#0a0c0f}
+@media(max-width:600px){
+  .dc .band{padding-left:10px;padding-right:10px}
+  .dc .band>.wrap{padding:20px 14px}
+}
+
+/* 常见问题页的页脚：机房的地板，不是设备 —— 不装面板、不上螺丝、不装灯 */
+.dc .foot>.wrap{background:none;border:0;box-shadow:none;padding:0}
+.dc .foot>.wrap::before{content:none}
+
+/* —— 动态（v15）：机器一直在跑。灯在闪、光在走；系统设了「减少动态效果」就全部停住（沿用首页那条规则） —— */
+@keyframes dcfiber{from{background-position:0 0,0 0,0 0,0 0}to{background-position:900px 0,1300px 0,0 0,0 0}}
+@keyframes dcdoor{from{background-position:0 0,30px 40px,150px 90px,90px 20px,0 0}to{background-position:0 0,260px 40px,-20px 90px,400px 20px,0 0}}
+/* 每台设备右上角一排指示灯：滚到它，它就开机（灯一颗一颗亮），然后一直闪 */
+.dc .dc-leds{position:absolute;top:9px;right:28px;display:flex;align-items:center;gap:6px;pointer-events:none}
+.dc .dc-leds b{flex:none;width:5px;height:5px;border-radius:50%;background:#14261b;
+  transition:background-color 0s calc(var(--k) * 90ms),box-shadow 0s calc(var(--k) * 90ms)}
+.dc .dc-leds b.pw{margin-right:6px}
+.dc .dc-leds b.amb{margin-left:6px}
+.dc .dc-leds.on b{background:var(--led);box-shadow:0 0 6px rgba(61,220,132,.7);animation:dcact var(--d) steps(1,end) var(--o) infinite}
+.dc .dc-leds.on b.pw{animation:none}
+.dc .dc-leds.on b.amb{background:var(--amb);box-shadow:0 0 6px rgba(255,176,32,.6);animation:dcamb var(--d) steps(1,end) var(--o) infinite}
+@keyframes dcact{0%{opacity:1}17%{opacity:.12}23%{opacity:1}49%{opacity:.2}55%{opacity:1}79%{opacity:.15}84%{opacity:1}}
+@keyframes dcamb{0%{opacity:.16}70%{opacity:1}78%{opacity:.16}}
+@media(max-width:767px){.dc .promo-in>.dc-leds{display:none}}
+/* 你选中的那一格：黄灯慢慢呼吸 */
+.dc .opt input:checked+span::after,.dc .pre button[aria-pressed=true]::after{animation:dcbreathe 2.6s ease-in-out infinite}
+@keyframes dcbreathe{50%{box-shadow:0 0 0 1px #6b6100,0 0 18px 3px rgba(255,230,0,.95)}}
+</style>
+<script id="dc-motion">
+addEventListener('DOMContentLoaded', () => {
+  // 每台设备（每段面板 + 电脑上的显示器单元）右上角装一排指示灯：电源常亮 + 5 颗活动灯 + 1 颗琥珀灯。纯装饰，读屏跳过。
+  let seed = 11;
+  const rnd = () => (seed = seed * 16807 % 2147483647) / 2147483647;
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }   // 滚到它才开机，开了就不再关
+  }), {rootMargin: '0px 0px -8% 0px'}) : null;
+  document.querySelectorAll('.band:not(.foot)>.wrap, .promo-in').forEach(u => {
+    const s = document.createElement('i');
+    s.className = 'dc-leds';
+    s.setAttribute('aria-hidden', 'true');
+    for (let k = 0; k < 7; k++) {
+      const b = document.createElement('b');
+      if (k === 0) b.className = 'pw'; else if (k === 6) b.className = 'amb';
+      b.style.cssText = `--k:${k};--d:${(0.8 + rnd() * 2.4).toFixed(2)}s;--o:${(-rnd() * 3).toFixed(2)}s`;
+      s.appendChild(b);
+    }
+    u.appendChild(s);
+    if (io) io.observe(s); else s.classList.add('on');
+  });
+});
+</script>
 </head>
 <body>
 <header class="nav"><div class="navin">
