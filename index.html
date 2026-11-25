@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>不打烊 AI 工作站</title>
-<meta name="description" content="放在曼谷机房的独享 Mac mini，AI 智能体 24 小时不停。M6 每月 219 USDT 起，USDT 结算，可代付 Claude Ultra。">
+<meta name="description" content="放在曼谷机房的独享 AI 工作站，AI 智能体 24 小时不停。15 vCPU、16 GB 内存、256 GB 硬盘，每月 570 USDT，含 Claude Ultra 代付，USDT 结算。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://budayangai.com/">
-<meta property="og:title" content="不打烊 AI 工作站：曼谷独享 Mac mini">
-<meta property="og:description" content="整机独享，AI 智能体 24 小时不停。M6 每月 219 USDT 起，USDT 结算。">
-<meta property="og:image" content="https://budayangai.com/og.png?v=10">
+<meta property="og:title" content="不打烊 AI 工作站：曼谷独享，AI 智能体 24 小时不停">
+<meta property="og:description" content="一人一台独享，15 vCPU、16 GB 内存、256 GB 硬盘。每月 570 USDT，含 Claude Ultra 代付，USDT 结算。">
+<meta property="og:image" content="https://budayangai.com/og.png?v=11">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0a0c0f">
-<meta name="version" content="v15 2026-11-21">
+<meta name="version" content="v16 2026-11-25">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -130,6 +130,7 @@ a.go2{display:flex;align-items:center;justify-content:center;color:inherit;text-
 .cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,4vw,56px)}
 .cols3>div{border-top:3px solid var(--rule);padding-top:14px}
 .cols3 p{margin:0;max-width:44ch}
+.cols3.two{grid-template-columns:repeat(2,minmax(0,1fr))}
 .ico{display:block;width:120px;height:72px;margin:0 0 10px}
 .ico .scr{fill:var(--bg);stroke:var(--ink);stroke-width:1.6}
 .ico .stand{fill:var(--ink)}
@@ -200,7 +201,7 @@ body{padding-bottom:78px}
 .steps li{padding:0 0 0 36px}
 .steps li::before{top:2px}
 .steps ol::after{top:10px;left:7px;width:5px;height:72px;background:linear-gradient(180deg,transparent,var(--y),transparent);animation-name:runv}
-.cols,.cols3,.qa{grid-template-columns:minmax(0,1fr)}
+.cols,.cols3,.cols3.two,.qa{grid-template-columns:minmax(0,1fr)}
 .plans{font-size:14px}
 .stack thead{display:none}
 .stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--con)}
@@ -402,53 +403,35 @@ addEventListener('DOMContentLoaded', () => {
   <span class="pill"><i class="dot" aria-hidden="true"></i>曼谷节点预约中</span>
 </div></header>
 <main>
-<section id="film" class="promo" aria-label="30 秒宣传片"><div class="promo-in">
+<section id="film" class="promo" aria-label="25 秒宣传片"><div class="promo-in">
   <div class="pv">
-    <video id="pv" src="promo.mp4?v=12" poster="promo.jpg?v=12" muted autoplay loop playsinline preload="auto" aria-label="不打烊 AI 工作站 30 秒宣传片"></video>
+    <video id="pv" src="promo.mp4?v=13" poster="promo.jpg?v=12" muted autoplay loop playsinline preload="auto" aria-label="不打烊 AI 工作站 25 秒宣传片"></video>
     <script>if(matchMedia('(prefers-reduced-motion: reduce)').matches){const v=document.getElementById('pv');v.removeAttribute('autoplay');v.pause();v.controls=true}</script>
     <button type="button" class="snd" id="snd" aria-pressed="false">开声音</button>
   </div>
   <div class="pt">
-    <h2>30 秒看懂不打烊</h2>
-    <p class="lead">放在曼谷机房，整机独享，AI 智能体 24 小时不停。你这边断线了，机器上的任务照样在跑。</p>
+    <h2>25 秒看懂不打烊</h2>
+    <p class="lead">放在曼谷机房，一人一台独享，AI 智能体 24 小时不停。你这边断线了，机器上的任务照样在跑。</p>
     <div class="pt-go"><a class="go" href="#pick">立即选配</a><a class="pt-faq" href="faq.html">常见问题</a></div>
   </div>
 </div></section>
 <section id="pick" class="band"><div class="wrap">
-  <h1>选一台只属于你的 Mac mini</h1>
-  <p class="lead">放在曼谷机房，整机独享，AI 智能体 24 小时不停。点一个组合，价格当场算好，发给顾问就能下单，全部用 USDT 结算。</p>
+  <h1>一台只属于你的 AI 工作站</h1>
+  <p class="lead">放在曼谷机房，一人一台独享，AI 智能体 24 小时不停。只有一种配套，月付，全部用 USDT 结算，发给顾问就能下单。</p>
   <div class="tool">
     <form class="ctl" id="f">
-      <p class="lab">常用组合，点一下就选好</p>
-      <div class="pre">
-        <button type="button" data-p="m6m" aria-pressed="false"><b>月付试一台</b><small>折合每月 219 USDT</small></button>
-        <button type="button" data-p="one" aria-pressed="true"><b>一人一台</b><small>折合每月 485 USDT</small></button>
-        <button type="button" data-p="pro" aria-pressed="false"><b>M5 Pro 年付</b><small>折合每月 613 USDT</small></button>
-        <button type="button" data-p="team" aria-pressed="false"><b>团队 6 台</b><small>折合每月 2,977 USDT</small></button>
-      </div>
-      <fieldset><legend>设备</legend><div class="opts o2">
-        <label class="opt"><input type="radio" name="device" value="m6" id="dev-m6"><span><b>Mac mini M6</b><small>12 核 CPU，16GB 内存，256GB 硬盘</small><small class="pr">219 USDT / 月</small></span></label>
-        <label class="opt"><input type="radio" name="device" value="m5pro" id="dev-m5pro"><span><b>Mac mini M5 Pro</b><small>15 核 CPU，24GB 内存，512GB 硬盘</small><small class="pr">369 USDT / 月</small></span></label>
-      </div><p class="note">全部是独享版：一人一台，整机只给你用。</p></fieldset>
-      <fieldset><legend>付款周期</legend><div class="opts o4">
-        <label class="opt"><input type="radio" name="period" value="month" id="per-month"><span><b>月付</b><small>按月预付</small></span></label>
-        <label class="opt"><input type="radio" name="period" value="quarter" id="per-quarter"><span><b>季付</b><small>可付 30% 定金</small></span></label>
-        <label class="opt"><input type="radio" name="period" value="half" id="per-half"><span><b>半年付</b><small>95 折</small></span></label>
-        <label class="opt"><input type="radio" name="period" value="year" id="per-year"><span><b>年付</b><small>85 折</small></span></label>
-      </div></fieldset>
+      <fieldset><legend>配套</legend><div class="opts">
+        <label class="opt"><input type="radio" name="device" value="vm" id="dev-vm" checked><span><b>独享版 AI 工作站</b><small>15 vCPU，16 GB 内存，256 GB 硬盘</small><small>含 Claude Ultra 代付</small><small class="pr">570 USDT / 月</small></span></label>
+      </div><p class="note">一人一台，只给你用。月付，按月预付，暂时不打折。</p></fieldset>
       <fieldset><legend>数量</legend>
         <div class="qty"><button type="button" id="minus" aria-label="减少">−</button><input id="qty" type="number" inputmode="numeric" min="1" max="20" value="1" aria-label="数量"><button type="button" id="plus" aria-label="增加">+</button><span id="unit">台</span></div>
-        <p class="note">3–5 台 95 折，6 台起 9 折，和周期折扣取较大的一个。超过 20 台按企业方案另谈。</p>
+        <p class="note">每台含一个 Claude Ultra 账号的代付。超过 20 台按企业方案另谈。</p>
       </fieldset>
-      <fieldset><legend>Claude 账号</legend><div class="opts o2">
-        <label class="opt"><input type="radio" name="claude" value="none" id="cl-none"><span><b>自己付</b><small>你自己付官方月费</small></span></label>
-        <label class="opt"><input type="radio" name="claude" value="ultra" id="cl-ultra"><span><b>Ultra 代付</b><small>每位使用者一个账号</small><small class="pr">299 USDT / 月</small></span></label>
-      </div><p class="note">账号在使用者本人名下。代付价已含税费和代付服务费，不参与折扣。</p></fieldset>
     </form>
     <div class="side">
       <div class="fig" id="fig">
         <svg id="rack" role="img" aria-label="曼谷机柜示意图，你的机器以黄色标出"></svg>
-        <div class="figtxt"><small>合计</small><b id="total">5,822<span class="cur"> USDT</span></b><p id="s1">折合每月 485 USDT</p><p id="s2">先付 30% 定金 1,747 USDT，验收后 3 天内付清余款</p><p class="live"><i class="dot" aria-hidden="true"></i><span>曼谷现在 <span id="clock">--:--:--</span> · 机器 24 小时不关机</span></p></div>
+        <div class="figtxt"><small>合计</small><b id="total">570<span class="cur"> USDT</span></b><p id="s1">每月 570 USDT</p><p id="s2">按月预付，下个月不续就停</p><p class="live"><i class="dot" aria-hidden="true"></i><span>曼谷现在 <span id="clock">--:--:--</span> · 机器 24 小时不关机</span></p></div>
       </div>
       <div class="res" id="res">
         <h3>报价明细</h3>
@@ -468,38 +451,36 @@ addEventListener('DOMContentLoaded', () => {
   <h2 id="h-steps">从选配到上线</h2>
   <ol>
     <li><b>选好，发给顾问</b><p>不用注册，价格当场算好，勾一项确认就能发。</p></li>
-    <li><b>顾问确认，签约付定金</b><p>核对配置和上线日期，签合同后顾问发你付款链接，用 USDT 付 30% 定金，到账自动确认；月付按月预付。</p></li>
-    <li><b>上架交付，验收付尾款</b><p>机器上架、装好环境交给你，验收后 3 天内付尾款。没有按合同日期上线，定金全退。</p></li>
+    <li><b>顾问确认，签约付第一个月</b><p>核对数量和上线日期，签合同后顾问发你付款链接，用 USDT 付第一个月，到账自动确认；之后按月预付。</p></li>
+    <li><b>开通交付，验收</b><p>开好机器、装好环境交给你验收。没有按合同日期上线，已付的第一个月全退。</p></li>
   </ol>
 </div></section>
 
 <section id="connect" class="band conn"><div class="wrap">
-  <h2>三种连法，都只连得到你自己那台</h2>
-  <div class="cols3">
+  <h2>两种连法，都只连得到你自己那台</h2>
+  <div class="cols3 two">
     <div><svg class="ico" viewBox="0 0 120 72" aria-hidden="true"><rect class="scr" x="8" y="5" width="104" height="52" rx="6"/><rect class="stand" x="52" y="58" width="16" height="6"/><rect class="stand" x="40" y="64" width="40" height="3" rx="1.5"/><rect class="ln" x="17" y="14" width="44" height="5" rx="2"/><rect class="ln" x="17" y="24" width="62" height="5" rx="2"/><rect class="ln" x="17" y="34" width="32" height="5" rx="2"/><path class="cursor" d="M0 0V14L4 10.5L7 16.5L9.4 15.4L6.5 9.6H11.5Z"/></svg><h3>RustDesk 应用</h3><p>Windows、Mac、安卓、iPhone 都能装。输入机器编号和密码就能看到桌面，用法跟 TeamViewer 一样；连接走我们自建的服务器，端到端加密，不用公共服务器。</p></div>
-    <div><svg class="ico" viewBox="0 0 120 72" aria-hidden="true"><rect class="scr" x="6" y="20" width="40" height="27" rx="4"/><rect class="stand" x="2" y="48" width="48" height="4" rx="2"/><rect class="scr" x="70" y="8" width="44" height="34" rx="4"/><rect class="stand" x="88" y="43" width="8" height="7"/><rect class="stand" x="80" y="50" width="24" height="3" rx="1.5"/><path class="wire" d="M48 33C58 33 60 25 68 25"/><circle class="pkt" r="3.2"/></svg><h3>Mac 自带屏幕共享</h3><p>你手上也是 Apple 芯片的 Mac（macOS 14 以上），可以开高性能模式，画面更顺，还有立体声。建议网速 75 Mbps 以上。</p></div>
     <div><svg class="ico" viewBox="0 0 120 72" aria-hidden="true"><rect class="term" x="4" y="6" width="112" height="58" rx="6"/><circle class="tb" cx="14" cy="15" r="2.5"/><circle class="tb" cx="22" cy="15" r="2.5"/><circle class="tb" cx="30" cy="15" r="2.5"/><text class="tt" x="14" y="44">$ claude</text><rect class="caret" x="84" y="33" width="8" height="14"/></svg><h3>SSH 终端</h3><p>写代码、跑 Claude Code 这类命令行智能体，用终端直连最省流量。你这边断线了，机器上的任务照样在跑。</p></div>
   </div>
   <p class="note">习惯用 TeamViewer 也可以自己装，它的商业授权需要你自备。</p>
 </div></section>
 
 <section id="plans" class="band"><div class="wrap">
-  <h2>两种配置，都是独享，都含托管和运维</h2>
+  <h2>一种配套，独享，含托管、运维和 Claude Ultra 代付</h2>
   <div class="scroll"><table class="plans stack">
-    <thead><tr><th>方案</th><th>设备</th><th>适合谁</th><th class="num">月费</th></tr></thead>
+    <thead><tr><th>方案</th><th>配置</th><th>适合谁</th><th class="num">月费</th></tr></thead>
     <tbody>
-      <tr><td data-l="方案"><b>独享版 M6</b></td><td data-l="设备">Mac mini M6，12 核，16GB，256GB</td><td data-l="适合谁">一个人或一个岗位，智能体全天在跑</td><td data-l="月费" class="num">219 USDT / 台</td></tr>
-      <tr><td data-l="方案"><b>独享版 M5 Pro</b></td><td data-l="设备">Mac mini M5 Pro，15 核，24GB，512GB</td><td data-l="适合谁">多个智能体并行、跑本地小模型</td><td data-l="月费" class="num">369 USDT / 台</td></tr>
+      <tr><td data-l="方案"><b>独享版 AI 工作站</b></td><td data-l="配置">15 vCPU，16 GB 内存，256 GB 硬盘</td><td data-l="适合谁">一个人或一个岗位，智能体全天在跑</td><td data-l="月费" class="num">570 USDT / 台</td></tr>
     </tbody>
   </table></div>
-  <p class="note">Claude Ultra 代付另计：299 USDT / 月 / 账号，已含税费和代付服务费。</p>
-  <ul class="incl"><li>数据中心机柜托管</li><li>机房千兆共享带宽</li><li>加密远程连接：RustDesk、屏幕共享、SSH</li><li>机器离线自动告警</li><li>人工支持每天 10:00–22:00（曼谷时间）</li><li>硬件故障免费维修或换机</li></ul>
+  <p class="note">月费已含一个 Claude Ultra 账号的代付（账号在使用者本人名下），已含税费和代付服务费。</p>
+  <ul class="incl"><li>曼谷数据中心托管</li><li>加密远程连接：RustDesk、SSH</li><li>机器离线自动告警</li><li>人工支持每天 10:00–22:00（曼谷时间）</li><li>出故障免费修复或换一台</li></ul>
 </div></section>
 
 <section id="rules" class="band rules"><div class="wrap">
   <h2>AI 账号在你名下，服务地区写进合同</h2>
   <div class="cols">
-    <div><h3>账号在你名下</h3><p>Claude、ChatGPT 等账号一律用你本人的邮箱注册，归你所有。月费可以自己付，也可以选我们代付：你用 USDT 跟我们结算，我们替你付给官方，你的密码我们不碰。账号不代开、不共享、不转借，这也是各家官方条款的要求。换机、退租都不影响你的账号和数据。</p></div>
+    <div><h3>账号在你名下</h3><p>Claude、ChatGPT 等账号一律用你本人的邮箱注册，归你所有。Claude Ultra 的官方月费已含在 570 USDT 里，由我们代付：你用 USDT 跟我们结算，我们替你付给官方，你的密码我们不碰。账号不代开、不共享、不转借，这也是各家官方条款的要求。换机、退租都不影响你的账号和数据。</p></div>
     <div><h3>只服务支持地区</h3><p>使用者须常驻在所用 AI 服务的支持地区，例如泰国、新加坡、马来西亚、印尼、菲律宾、越南。人在中国大陆、港澳、俄罗斯等不支持地区的个人，以及由这些地区的个人或公司控股的企业，我们不提供服务。签约时会核对。违反这条导致 AI 账号被官方封禁的，已付托管费和代付费不退。</p></div>
   </div>
 </div></section>
@@ -510,7 +491,7 @@ addEventListener('DOMContentLoaded', () => {
 </div></section>
 </main>
 
-<div class="bar" id="bar"><div><b id="bar-total">5,822 USDT</b><small id="bar-sub">折合每月 485 USDT</small></div><button type="button" id="bar-go">下单</button></div>
+<div class="bar" id="bar"><div><b id="bar-total">570 USDT</b><small id="bar-sub">每月 570 USDT</small></div><button type="button" id="bar-go">下单</button></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="sheet" id="sheet" hidden><div role="dialog" aria-modal="true" aria-labelledby="sheet-h"><h3 id="sheet-h">长按全选，复制后发给顾问</h3><textarea id="sheet-t" readonly></textarea><button type="button" class="go" id="sheet-x">关闭</button></div></div>
 
@@ -531,34 +512,19 @@ addEventListener('DOMContentLoaded', () => {
 </script>
 <script id="pricing">
 const P = (() => {
-  const PRICE = {m6: 219, m5pro: 369};
-  const NAME = {m6: '独享版 Mac mini M6 16GB/256GB', m5pro: '独享版 Mac mini M5 Pro 24GB/512GB'};
-  const PERIOD = {month: {m: 1, r: 0, n: '月付'}, quarter: {m: 3, r: 0, n: '季付'}, half: {m: 6, r: 5, n: '半年付'}, year: {m: 12, r: 15, n: '年付'}};
-  const CLAUDE = {none: {p: 0, n: ''}, ultra: {p: 299, n: 'Claude Ultra'}};
-  const ZHE = {5: '95 折', 10: '9 折', 15: '85 折'};
+  const PRICE = {vm: 570};
+  const NAME = {vm: '独享版 AI 工作站（15 vCPU / 16 GB 内存 / 256 GB 硬盘，含 Claude Ultra 代付）'};
   const num = n => n.toLocaleString('en-US'), usdt = n => num(n) + ' USDT';
   function quote(c) {
-    const k = c.device, u = '台', per = PERIOD[c.period], cc = CLAUDE[c.claude] || CLAUDE.none;
-    const vr = c.qty >= 6 ? 10 : c.qty >= 3 ? 5 : 0, rate = Math.max(per.r, vr);
-    const base = PRICE[k] * c.qty * per.m, cl = cc.p * c.qty * per.m, disc = Math.round(base * rate / 100);
-    const why = !rate ? '' : per.r >= vr ? per.n + ' ' + ZHE[rate] : (c.qty >= 6 ? '6 ' + u + '起 9 折' : '3–5 ' + u + ' 95 折');
-    const total = base - disc + cl;
-    return {k, u, m: per.m, pn: per.n, unit: PRICE[k], base, rate, why, disc, cl, cn: cc.n, cp: cc.p, total,
-      perMonth: Math.round(total / per.m), deposit: per.m > 1 ? Math.round(total * 3 / 10) : total,
-      machines: c.qty};
+    const k = 'vm', total = PRICE[k] * c.qty;
+    return {k, u: '台', m: 1, unit: PRICE[k], total, perMonth: total, machines: c.qty};
   }
   function planText(c, q) {
-    const L = ['【不打烊 AI 工作站 选配方案】', `方案：${NAME[q.k]} × ${c.qty} ${q.u}`, '机房：曼谷', `周期：${q.pn}（${q.m} 个月）`,
-      `主机费：${usdt(q.unit)} × ${c.qty} ${q.u} × ${q.m} 个月 = ${usdt(q.base)}`];
-    if (q.disc) L.push(`优惠：${q.why}，只打主机费 −${usdt(q.disc)}`);
-    if (q.cl) L.push(`${q.cn} 代付：${usdt(q.cp)} × ${c.qty} 个账号 × ${q.m} 个月 = ${usdt(q.cl)}（账号在使用者本人名下）`);
-    L.push(`合计：${usdt(q.total)}（折合每月 ${usdt(q.perMonth)}）`);
-    L.push(q.m > 1 ? `定金 30%：${usdt(q.deposit)}，上线验收后 3 天内付清余款` : `月付：每月 ${usdt(q.total)}，按月预付`);
-    L.push('结算币种：USDT');
-    L.push('已确认：使用者常驻支持地区；AI 账号用本人邮箱开通、在本人名下；公司不由不支持地区控股');
-    return L.join('\n');
+    return ['【不打烊 AI 工作站 方案】', `配套：${NAME[q.k]} × ${c.qty} ${q.u}`, '机房：曼谷', '周期：月付，按月预付',
+      `月费：${usdt(q.unit)} × ${c.qty} ${q.u} = ${usdt(q.total)}`, 'Claude Ultra：每台含一个账号的代付（账号在使用者本人名下）', '结算币种：USDT',
+      '已确认：使用者常驻支持地区；AI 账号用本人邮箱开通、在本人名下；公司不由不支持地区控股'].join('\n');
   }
-  return {PRICE, NAME, PERIOD, CLAUDE, quote, planText, usdt, num};
+  return {PRICE, NAME, quote, planText, usdt, num};
 })();
 </script>
 <script>
@@ -567,19 +533,12 @@ const P = (() => {
   const $ = id => document.getElementById(id), f = $('f'), qtyEl = $('qty'), svg = $('rack');
   const calm = matchMedia('(prefers-reduced-motion: reduce)');
   const r1 = v => Math.round(v * 10) / 10, RW = 11.4, GAP = 2.4, RH = 10.6;
-  const PRESET = {
-    m6m: {device: 'm6', period: 'month', qty: 1, claude: 'none'},
-    one: {device: 'm6', period: 'year', qty: 1, claude: 'ultra'},
-    pro: {device: 'm5pro', period: 'year', qty: 1, claude: 'ultra'},
-    team: {device: 'm6', period: 'half', qty: 6, claude: 'ultra'}
-  };
   let cur = null, prev = 0, seed = 7;
   const rnd = () => (seed = seed * 16807 % 2147483647) / 2147483647;
   const blinkStyle = () => `--d:${(1.8 + rnd() * 2.6).toFixed(2)}s;--o:${(-rnd() * 4).toFixed(2)}s`;
   const val = n => (f.querySelector(`input[name=${n}]:checked`) || {}).value;
   const clampQty = () => Math.min(20, Math.max(1, parseInt(qtyEl.value, 10) || 1));
-  const read = () => ({device: val('device') || 'm6', period: val('period'), qty: clampQty(), claude: val('claude') || 'none'});
-  const same = (a, b) => a.device === b.device && a.period === b.period && a.qty === b.qty && a.claude === b.claude;
+  const read = () => ({qty: clampQty()});
 
   function mini(x, y, w, h, n, q) {
     const a = `x="${r1(x)}" y="${r1(y)}" width="${r1(w)}" height="${r1(h)}" rx="${r1(.16 * h)}"`;
@@ -621,7 +580,7 @@ const P = (() => {
       for (let p = 0; p < 8; p++) o += `<circle class="port" cx="${r1(ix + iw * (p + .5) / 8)}" cy="${r1(py + .4 * U)}" r="${r1(.17 * U)}"/>`;
       o += `<rect class="sweep" style="--h:${r1(8.4 * U)}px" x="${r1(ix)}" y="${r1(y0 + .3 * U)}" width="${r1(iw)}" height="${r1(1.4 * U)}" fill="url(#sw)"/>`;
     }
-    const key = `你的 ${q.machines} 台`, sub = (racks > 1 ? '占两个四分之一机柜，每柜 12 台' : '四分之一机柜，每柜放 12 台') + '，曼谷';
+    const key = `你的 ${q.machines} 台`, sub = '曼谷机房';
     const kx = r1(wide ? 20 : x0), ky = r1(H - 34);
     o += `<rect class="mine" x="${kx}" y="${r1(ky - 13)}" width="14" height="14" rx="3"/><text class="key" x="${r1(kx + 22)}" y="${ky}">${key}</text><text class="cap" x="${kx}" y="${r1(ky + 22)}">${sub}</text>`;
     svg.innerHTML = o;
@@ -647,26 +606,18 @@ const P = (() => {
     const c = read(), q = P.quote(c);
     qtyEl.value = c.qty;
     cur = {c, q};
-    const rows = [[`主机费 ${P.usdt(q.unit)} × ${c.qty} ${q.u} × ${q.m} 个月`, P.usdt(q.base)]];
-    if (q.disc) rows.push([`${q.why}（只打主机费，与另一种折扣取大）`, '−' + P.usdt(q.disc)]);
-    if (q.cl) rows.push([`${q.cn} 代付 ${P.usdt(q.cp)} × ${c.qty} 个账号 × ${q.m} 个月`, P.usdt(q.cl)]);
+    const rows = [[`月费 ${P.usdt(q.unit)} × ${c.qty} ${q.u}（每台含一个 Claude Ultra 账号的代付）`, P.usdt(q.total)]];
     $('lines').innerHTML = rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('');
     tween($('total'), q.total, v => P.num(v) + '<span class="cur"> USDT</span>');
     tween($('bar-total'), q.total, v => P.usdt(v));
-    $('s1').textContent = `折合每月 ${P.usdt(q.perMonth)}`;
-    $('s2').textContent = q.m > 1 ? `先付 30% 定金 ${P.usdt(q.deposit)}，验收后 3 天内付清余款` : '按月预付，下个月不续就停';
-    $('bar-sub').textContent = `折合每月 ${P.usdt(q.perMonth)}`;
+    $('s1').textContent = `每月 ${P.usdt(q.perMonth)}`;
+    $('s2').textContent = '按月预付，下个月不续就停';
+    $('bar-sub').textContent = `每月 ${P.usdt(q.perMonth)}`;
     if (CONFIG.whatsapp) $('wa').href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(P.planText(c, q))}`;
     if (CONFIG.telegram) $('tg').href = `https://t.me/${CONFIG.telegram}?text=${encodeURIComponent(P.planText(c, q))}`;
-    document.querySelectorAll('[data-p]').forEach(b => b.setAttribute('aria-pressed', String(same(PRESET[b.dataset.p], c))));
     draw();
   }
 
-  function set(p) {
-    for (const n of ['device', 'period', 'claude']) { const el = f.querySelector(`input[name=${n}][value=${p[n]}]`); if (el) el.checked = true; }
-    qtyEl.value = p.qty;
-    update();
-  }
 
   const ok = () => $('agree').checked;
   function toast(t) { const el = $('toast'); el.textContent = t; el.classList.add('on'); clearTimeout(toast.h); toast.h = setTimeout(() => el.classList.remove('on'), 2200); }
@@ -690,7 +641,6 @@ const P = (() => {
     if (a) window.open(a.href, '_blank', 'noopener'); else copy();
   }
 
-  document.querySelectorAll('[data-p]').forEach(b => { b.querySelector('small').textContent = `折合每月 ${P.usdt(P.quote(PRESET[b.dataset.p]).perMonth)}`; });
   if (CONFIG.whatsapp) $('wa').hidden = false;
   if (CONFIG.telegram) { $('tg').hidden = false; if (CONFIG.whatsapp) $('tg').className = 'go2'; }
   if (CONFIG.whatsapp || CONFIG.telegram) { $('copy').className = 'go2'; $('copy').textContent = '只复制方案'; $('bar-go').textContent = CONFIG.whatsapp ? 'WhatsApp 下单' : 'Telegram 下单'; }
@@ -699,7 +649,6 @@ const P = (() => {
   qtyEl.addEventListener('input', () => { if (qtyEl.value !== '') update(); });
   $('minus').addEventListener('click', () => { qtyEl.value = clampQty() - 1; update(); });
   $('plus').addEventListener('click', () => { qtyEl.value = clampQty() + 1; update(); });
-  document.querySelectorAll('[data-p]').forEach(b => b.addEventListener('click', () => set(PRESET[b.dataset.p])));
   $('copy').addEventListener('click', copy);
   $('bar-go').addEventListener('click', go);
   for (const id of ['wa', 'tg']) $(id).addEventListener('click', e => { if (!ok()) { e.preventDefault(); blocked(); } });
@@ -711,7 +660,7 @@ const P = (() => {
   const tick = () => { $('clock').textContent = clockFmt.format(new Date()); };
   tick();
   setInterval(tick, 1000);
-  set(PRESET.one);
+  update();
 }
 </script>
 </body>
