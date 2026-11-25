@@ -372,12 +372,19 @@ addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+<style>
+.navin>.account-login{display:inline-flex;flex:none;align-items:center;justify-content:center;min-height:40px;padding:0 13px;border:1px solid #ffe600;border-radius:4px;color:#ffe600;font-size:15px;font-weight:650;text-decoration:none;white-space:nowrap}
+.navin>.account-login:hover{background:#ffe600;color:#101315}
+.navin>.account-login:focus-visible{outline:3px solid #ffe600;outline-offset:3px}
+@media(max-width:600px){.navin>.account-login{margin-left:auto}}
+</style>
 </head>
 <body>
 <header class="nav"><div class="navin">
   <a class="brand" href="index.html" aria-label="不打烊 AI 工作站"><svg width="30" height="20" viewBox="0 0 30 20" aria-hidden="true"><rect x="1" y="4" width="28" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="23.5" cy="10" r="2.2" fill="#ffe600" stroke="currentColor" stroke-width="1"/></svg>不打烊<span class="tag">AI 工作站</span></a>
   <nav class="links" aria-label="页面导航"><a href="index.html#pick">选配</a><a href="index.html#connect">连接方式</a><a href="index.html#plans">方案</a><a href="index.html#rules">账号与地区</a><a href="faq.html" aria-current="page">常见问题</a></nav>
   <span class="pill"><i class="dot" aria-hidden="true"></i>曼谷节点预约中</span>
+  <a class="account-login" href="https://budayang-login.pages.dev/" referrerpolicy="no-referrer">邮箱登录</a>
 </div></header>
 <main>
 <section id="faq" class="band faqpage"><div class="wrap">
